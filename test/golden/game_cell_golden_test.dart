@@ -1,4 +1,3 @@
-import 'package:clean_tic_tac_toe/core/theme/app_theme.dart';
 import 'package:clean_tic_tac_toe/domain/domain.dart';
 import 'package:clean_tic_tac_toe/presentation/widgets/game_cell_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,29 +11,23 @@ void main() {
       const cell = Cell.empty();
       const position = CellPosition(row: 0, col: 0);
 
-      final builder = GoldenBuilder.column()
-        ..addScenario(
-          'Empty cell',
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.white,
-            child: GameCellWidget(
-              cell: cell,
-              position: position,
-              onTap: () {},
-            ),
-          ),
-        );
-
-      // Act & Assert
+      // Act
       await tester.pumpWidgetBuilder(
-        builder.build(),
-        surfaceSize: const Size(200, 150),
+        SizedBox(
+          width: 100,
+          height: 100,
+          child: GameCellWidget(
+            cell: cell,
+            position: position,
+            onTap: () {},
+          ),
+        ),
+        surfaceSize: const Size(100, 100),
       );
       await tester.pumpAndSettle();
 
-      await screenMatchesGolden(tester, 'game_cell_empty');
+      // Assert
+      await screenMatchesGolden(tester, 'goldens/game_cell_empty');
     });
 
     testGoldens('Cell with X and O golden test', (tester) async {
@@ -46,13 +39,9 @@ void main() {
       final builder = GoldenBuilder.column()
         ..addScenario(
           'Cell with X',
-          Container(
+          SizedBox(
             width: 100,
             height: 100,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey.shade300),
-            ),
             child: GameCellWidget(
               cell: cellX,
               position: position,
@@ -62,13 +51,9 @@ void main() {
         )
         ..addScenario(
           'Cell with O',
-          Container(
+          SizedBox(
             width: 100,
             height: 100,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey.shade300),
-            ),
             child: GameCellWidget(
               cell: cellO,
               position: position,
@@ -77,14 +62,15 @@ void main() {
           ),
         );
 
-      // Act & Assert
+      // Act
       await tester.pumpWidgetBuilder(
         builder.build(),
-        surfaceSize: const Size(200, 400),
+        surfaceSize: const Size(500, 500),
       );
       await tester.pumpAndSettle();
 
-      await screenMatchesGolden(tester, 'game_cell_x_and_o');
+      // Assert
+      await screenMatchesGolden(tester, 'goldens/game_cell_x_and_o');
     });
   });
 }

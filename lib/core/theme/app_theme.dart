@@ -40,10 +40,10 @@ class AppTheme {
         brightness: Brightness.light,
       ),
       scaffoldBackgroundColor: backgroundColor,
-      cardTheme: const CardTheme(
+      cardTheme: CardThemeData(
         elevation: 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: BorderRadius.circular(16),
         ),
         color: surfaceColor,
       ),
@@ -79,4 +79,3 @@ class AppTheme {
   /// Animation curve for most transitions.
   static const Curve animationCurve = Curves.easeInOut;
 }
-

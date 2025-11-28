@@ -18,9 +18,7 @@ void main() {
       await tester.pumpWidgetBuilder(
         BlocProvider.value(
           value: bloc,
-          child: Center(
-            child: GameBoardWidget(board: board),
-          ),
+          child: GameBoardWidget(board: board),
         ),
         wrapper: materialAppWrapper(
           theme: AppTheme.lightTheme,
@@ -30,7 +28,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Assert
-      await screenMatchesGolden(tester, 'game_board_empty');
+      await screenMatchesGolden(tester, 'goldens/game_board_empty');
 
       bloc.close();
     });
@@ -48,9 +46,7 @@ void main() {
       await tester.pumpWidgetBuilder(
         BlocProvider.value(
           value: bloc,
-          child: Center(
-            child: GameBoardWidget(board: board),
-          ),
+          child: GameBoardWidget(board: board),
         ),
         wrapper: materialAppWrapper(
           theme: AppTheme.lightTheme,
@@ -60,7 +56,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Assert
-      await screenMatchesGolden(tester, 'game_board_in_progress');
+      await screenMatchesGolden(tester, 'goldens/game_board_in_progress');
 
       bloc.close();
     });
@@ -78,9 +74,7 @@ void main() {
       await tester.pumpWidgetBuilder(
         BlocProvider.value(
           value: bloc,
-          child: Center(
-            child: GameBoardWidget(board: board),
-          ),
+          child: GameBoardWidget(board: board),
         ),
         wrapper: materialAppWrapper(
           theme: AppTheme.lightTheme,
@@ -90,7 +84,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Assert
-      await screenMatchesGolden(tester, 'game_board_winner');
+      await screenMatchesGolden(tester, 'goldens/game_board_winner');
 
       bloc.close();
     });

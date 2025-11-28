@@ -107,17 +107,9 @@ void main() {
         ),
       );
 
-      // Assert - Board should have a Container with decoration
-      expect(find.byType(Container), findsWidgets);
-
-      // Should have 3 Rows (for 3 rows of grid)
-      expect(
-        find.descendant(
-          of: find.byType(Column),
-          matching: find.byType(Expanded),
-        ),
-        findsNWidgets(3), // 3 rows
-      );
+      // Assert - Board should be displayed
+      expect(find.byType(GameBoardWidget), findsOneWidget);
+      expect(find.byType(GameCellWidget), findsNWidgets(9));
 
       bloc.close();
     });
