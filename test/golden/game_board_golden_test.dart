@@ -64,9 +64,15 @@ void main() {
     testGoldens('Board with winning line golden test', (tester) async {
       // Arrange - X wins on top row
       final board = GameBoard.fromCells([
-        const Cell(owner: Player.x), const Cell(owner: Player.x), const Cell(owner: Player.x),
-        const Cell(owner: Player.o), const Cell(owner: Player.o), const Cell.empty(),
-        const Cell.empty(), const Cell.empty(), const Cell.empty(),
+        const Cell(owner: Player.x),
+        const Cell(owner: Player.x),
+        const Cell(owner: Player.x),
+        const Cell(owner: Player.o),
+        const Cell(owner: Player.o),
+        const Cell.empty(),
+        const Cell.empty(),
+        const Cell.empty(),
+        const Cell.empty(),
       ]);
       final bloc = GameBloc();
 
@@ -88,6 +94,5 @@ void main() {
 
       bloc.close();
     });
-  }, tags: 'golden');
+  });
 }
-

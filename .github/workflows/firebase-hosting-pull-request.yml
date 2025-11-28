@@ -20,8 +20,8 @@ jobs:
       - name: Get Flutter dependencies
         run: flutter pub get
 
-      - name: Run tests
-        run: flutter test --exclude-tags golden
+      - name: Run tests (excluding golden)
+        run: flutter test test/domain test/presentation test/widget_test.dart
 
       - name: Build web
         run: flutter build web --release --web-renderer auto
