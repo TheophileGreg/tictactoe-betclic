@@ -88,6 +88,6 @@ void main() {
 
       bloc.close();
     });
-  });
+  }, tags: 'golden');
 }
 

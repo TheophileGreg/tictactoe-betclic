@@ -72,5 +72,5 @@ void main() {
       // Assert
       await screenMatchesGolden(tester, 'goldens/game_cell_x_and_o');
     });
-  });
+  }, tags: 'golden');
 }
