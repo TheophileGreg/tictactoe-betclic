@@ -95,10 +95,10 @@ class _GameCellWidgetState extends State<GameCellWidget>
         decoration: BoxDecoration(
           border: Border(
             right: widget.showRightBorder
-                ? BorderSide(color: AppTheme.gridColor, width: 2)
+                ? BorderSide(color: AppTheme.gridColor, width: 3)
                 : BorderSide.none,
             bottom: widget.showBottomBorder
-                ? BorderSide(color: AppTheme.gridColor, width: 2)
+                ? BorderSide(color: AppTheme.gridColor, width: 3)
                 : BorderSide.none,
           ),
         ),
@@ -132,4 +132,3 @@ class _GameCellWidgetState extends State<GameCellWidget>
     );
   }
 }
-

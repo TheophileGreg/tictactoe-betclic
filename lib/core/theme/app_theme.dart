@@ -20,7 +20,7 @@ class AppTheme {
   static const Color surfaceColor = Colors.white;
 
   /// Grid line color.
-  static const Color gridColor = Color(0xFFE2E8F0);
+  static const Color gridColor = Color(0xFF334155);
 
   /// Text color primary.
   static const Color textPrimary = Color(0xFF0F172A);
